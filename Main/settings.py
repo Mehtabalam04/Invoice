@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from datetime import timedelta
 from corsheaders.defaults import default_headers
-load_dotenv()
+# load_dotenv()
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,11 +26,11 @@ TIME_ZONE =  'Asia/Kolkata'
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "eod5&*x7rs^*_b17ql(5*feggxj1=1)33xygl#y6-p5x(0y12_"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app",'*']
+ALLOWED_HOSTS = ["Mehtab04.pythonanywhere.com",'*']
 CORS_ALLOW_ALL_ORIGINS=True
 CORS_ALLOW_METHODS = (
     "DELETE",
@@ -105,7 +105,7 @@ WSGI_APPLICATION = 'Main.wsgi.application'
 #     }
 # }
 
-MEDIA_ROOT = os.path.join(BASE_DIR ,'media' ) 
+MEDIA_ROOT = os.path.join(BASE_DIR ,'media' )
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -113,12 +113,12 @@ STATIC_URL = "/static/"
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('ENGINE'),
-        'NAME': os.environ.get('Database_name'),
-        'USER': os.environ.get('Database_username'),
-        'PASSWORD': os.environ.get('Password'),
-        'HOST': os.environ.get('Host_name'),  
-        'PORT': os.environ.get('Port'),      
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Mehtab04$invoice_main',
+        'USER': 'Mehtab04',
+        'PASSWORD': 'Mehtab@123',
+        'HOST': 'Mehtab04.mysql.pythonanywhere-services.com',
+        'PORT': "3306",
     }
 }
 AUTH_USER_MODEL = 'App.CoreUser'
@@ -168,16 +168,16 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = "mehtabalamansari235@gmail.com"
+EMAIL_HOST_PASSWORD = 'edjg fxol pksg ytgv'
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication"
-        
+
     ),
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
