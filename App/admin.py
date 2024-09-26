@@ -36,3 +36,6 @@ class PaymentAdmin(admin.ModelAdmin):
 # @admin.register(Item_tax)
 # class Item_taxAdmin(admin.ModelAdmin):
 #     list_display = Item_tax.DisplayField
+@admin.register(Role)
+class RoleAdmin(admin.ModelAdmin):
+    list_display = Role.DisplayField
